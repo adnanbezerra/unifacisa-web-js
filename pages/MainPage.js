@@ -36,7 +36,7 @@ export function MainPage() {
             preco: '10'
         },
         {
-            nome: 'mercedes a38 amg',
+            nome: 'Mercedes A38 AMG',
             img: 'mercedes8.jpg',
             preco: '1'
         }
@@ -59,10 +59,15 @@ export function MainPage() {
     }
     
     return (`
-    <h2 class="text-lg font-bold">Bem-vindo ao Outlet Mercedes Barata!</h2>
+    <h2 class="text-lg font-bold">Bem-vindo ao Outlet Mercedes Benz!</h2>
     <p class="mb-4">Confira nossos modelos disponíveis:</p>
-    <div class="flex overflow-x-scroll no-scrollbar">
-    ${renderCatalogo()}
+    <div class="flex overflow-x-scroll">
+        ${renderCatalogo()}
+    </div>
+    <div class="flex flex-col w-full items-center justify-center mt-4 bg-white p-8 rounded-lg">
+        <h3 class="text-red-500 font-bold text-7xl mb-2 animate-bounce">Seu luxo a baixo custo!</h3>
+        <h4 class="text-2xl font-bold text-yellow-600 mb-2">Compre já! Mercedes Benz a preços populares</h4>
+        <h4 class="text-2xl font-bold">Entregamos em até 90 dias, 100% seguro e confiável</h4>
     </div>
     `);
 }
