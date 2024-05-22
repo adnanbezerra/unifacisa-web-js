@@ -1,4 +1,4 @@
-import { catalogo } from "../shared/files";
+import { catalogo } from "../shared/files.js";
 
 export function MainPage() {
     function renderCatalogo() {
