@@ -1,4 +1,5 @@
 import { catalogo } from "../shared/files.js";
+import { Modal } from "./Modal.js";
 
 export function MainPage() {
     function renderCatalogo() {
@@ -17,7 +18,10 @@ export function MainPage() {
         return catalogoHtml;
     }
     
+    const modal = new Modal();
+
     return (`
+    ${Modal()}
     <h2 class="text-lg font-bold">Bem-vindo ao Outlet Mercedes Benz!</h2>
     <p class="mb-4">Confira nossos modelos disponíveis:</p>
     <div class="flex overflow-x-scroll">
@@ -28,5 +32,7 @@ export function MainPage() {
         <h4 class="text-2xl font-bold text-yellow-600 mb-2">Compre já! Mercedes Benz a preços populares</h4>
         <h4 class="text-2xl font-bold">Entregamos em até 90 dias, 100% seguro e confiável</h4>
     </div>
+    <h2 class="text-lg font-bold mt-4">As nossas melhores ofertas:</h2>
+
     `);
 }
