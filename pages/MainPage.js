@@ -5,7 +5,7 @@ export function MainPage() {
     function renderCatalogo() {
         let catalogoHtml = '';
 
-        catalogo.forEach((carro) => {
+        catalogo.forEach((carro) => { // Primeiro método com array
             catalogoHtml += `
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-lg mr-4 custom-width">
                 <img src="img/${carro.img}" class="w-48 h-48 object-cover rounded-lg" alt="${carro.nome}"> 
@@ -17,8 +17,24 @@ export function MainPage() {
 
         return catalogoHtml;
     }
-    
-    const modal = new Modal();
+
+    function renderAsTresMaisBaratas() {
+        let catalogoHtml = '';
+
+        catalogo.sort((a, b) => Number(a.preco) - Number(b.preco)); // Segundo método com array
+
+        for (let i = 0; i < 3; i++) {
+            catalogoHtml += `
+            <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-lg mr-4 custom-width">
+                <img src="img/${catalogo[i].img}" class="w-48 h-48 object-cover rounded-lg" alt="${catalogo[i].nome}"> 
+                <h3 class="text-lg font-bold mt-2">${catalogo[i].nome}</h3>
+                <p class="text-sm mt-2">R$ ${catalogo[i].preco}</p>
+            </div>
+            `;
+        }
+
+        return catalogoHtml;
+    }
 
     return (`
     ${Modal()}
@@ -33,6 +49,8 @@ export function MainPage() {
         <h4 class="text-2xl font-bold">Entregamos em até 90 dias, 100% seguro e confiável</h4>
     </div>
     <h2 class="text-lg font-bold mt-4">As nossas melhores ofertas:</h2>
-
+    <div class="flex overflow-x-scroll mt-4 mb-4">
+        ${renderAsTresMaisBaratas()}
+    </div>
     `);
 }

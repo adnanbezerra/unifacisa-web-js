@@ -10,36 +10,21 @@ function openModal() {
     modalHtml.style.display = 'flex';
 }
 
-function closeModal() {
-    modalHtml.style.display = 'none';
-}
-
-function clearRootHtml() {
-    root.innerHTML = '';
-}
-
-function addElementToRoot(element) {
-    root.innerHTML += element;
-}
+let hasOpened = false;
 
 window.addEventListener('scroll', function () {
     const scrollHeight = window.scrollY;
-    const totalHeight = document.body.scrollHeight;
 
-    if (scrollHeight > totalHeight / 6) {
-        console.log('Scrolling');
+    if (scrollHeight >= 156 && !hasOpened) {
         openModal();
+        hasOpened = true;
     }
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    modalHtml.style.display = 'none';
 });
 
 function changeElementsOnRoot(element) {
     root.innerHTML = element;
 }
-
-// sensor de ré, multimidia, silicone para couro, spray de limpeza, descanso de cabeça com tela
-
-
-
-
-
-

@@ -22,7 +22,7 @@ export const catalogo = [
     {
         nome: 'Mercedes Uno Branco',
         img: 'mercedes5.jpg',
-        preco: '2,50'
+        preco: '2.50'
     },
     {
         nome: 'Mercedes E320 Preto',
