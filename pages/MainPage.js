@@ -18,12 +18,12 @@ export function MainPage() {
         return catalogoHtml;
     }
 
-    function renderAsTresMaisBaratas() {
+    function renderAsQuatroMaisBaratas() {
         let catalogoHtml = '';
 
         catalogo.sort((a, b) => Number(a.preco) - Number(b.preco)); // Segundo método com array
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             catalogoHtml += `
             <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-lg mr-4 custom-width">
                 <img src="img/${catalogo[i].img}" class="w-48 h-48 object-cover rounded-lg" alt="${catalogo[i].nome}"> 
@@ -35,6 +35,16 @@ export function MainPage() {
 
         return catalogoHtml;
     }
+
+
+    fetch('https://economia.awesomeapi.com.br/json/BRL-USD')
+        .then(response => response.json())
+        .then(data => {
+            const dolar = data[0].bid;
+            const dolarReal = document.querySelector('.dolar-real');
+            dolarReal.innerHTML = `US$ ${dolar}`;
+        })
+
 
     return (`
     ${Modal()}
@@ -50,7 +60,12 @@ export function MainPage() {
     </div>
     <h2 class="text-lg font-bold mt-4">As nossas melhores ofertas:</h2>
     <div class="flex overflow-x-scroll mt-4 mb-4">
-        ${renderAsTresMaisBaratas()}
+        ${renderAsQuatroMaisBaratas()}
+    </div>
+    <div class="flex flex-col w-full items-center justify-center mt-4 bg-white p-8 rounded-lg">
+        <h3 class="text-red-500 font-bold text-7xl mb-2 animate-bounce">É cliente internacional?!</h3>
+        <h2 class="text-lg font-bold">Cotação do valor do real para o dólar:</h2>
+        <p class="dolar-real"></p>
     </div>
     `);
 }
