@@ -1,9 +1,9 @@
 # Requisitos para a fase dois
 
 - [ ] O projeto deve ter pelo menos 8 funcionalidades implementadas;
-- [ ] Utilização de Operadores; - Adnan
+- [x] Utilização de Operadores; - Adnan
 - [ ] Comandos de saída;
-- [ ] Funções com Arrays (mínimo 3); for each
+- [ ] Funções com Arrays (mínimo 3); tem duas feitas
 - [ ] Funções com Strings (mínimo 2);
 - [x] Implementar módulos internos e/ou externos;
 - [x] Adição de Eventos (addEventListener); - Adnan 
