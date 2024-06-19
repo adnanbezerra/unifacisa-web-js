@@ -45,4 +45,5 @@ function adicionarAcessorio() {
         alert('Por favor, digite um acessório.');
     }
 }
-
+    //Exportar a função adicionarAcessorio
+    module.exports = {adicionarAcessorio};
