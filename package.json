@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "jsdom": "^24.1.0",
+    "lighthouse": "^12.1.0",
     "ts-node": "^10.9.2"
   }
 }
