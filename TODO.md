@@ -8,6 +8,6 @@
 - [x] Implementar módulos internos e/ou externos;
 - [x] Adição de Eventos (addEventListener); - modal
 - [x] Dentre as funcionalidades deve ter funções síncronas e funções assíncronas; - cotação do dólar
-- [ ] Realizar testes automatizados (função) a partir de algum framework;
-- [ ] Testar a aplicação (eficiência);
+- [x] Realizar testes automatizados (função) a partir de algum framework;
+- [x] Testar a aplicação (eficiência);
 - [ ] [OPCIONAL]Implementar o projeto em Vanilla, TypeScript ou React.
