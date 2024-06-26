@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,24 +25,33 @@
             <p>+ Taxa zero</p>
         </div>
     </header>
+    <div class="bg-[#f3f4f6] h-18 flex p-2">
+        <nav class="flex items-center w-1/2">
+            <a href="./index.html" class="hover:text">Nossos carros</a>
+        </nav>
+    </div>
 
-    <div id="root" class="w-full p-4 custom-height">
-   
-    <h1>Acessórios Disponíveis</h1>
-    <ul id="lista"></ul>
-    <button onclick="mostrarAcessorios()">Mostrar acessórios</button>
+    <div id="root" class="w-full p-4 custom-height flex flex-col">
 
-    <p1>Carrinho de compras</p1>
-    
-    <!-- Campo de entrada para novos acessórios -->
-    <input type="text" id="novoAcessorio" placeholder="Digite um acessório">
-    <button onclick="adicionarAcessorio()">Adicionar Acessório</button>
-    
-    <!-- Lista de acessórios adicionados -->
-    <ul id="listaCompras"></ul>
+        <h1 class="text-lg font-bold">Confira nossos acessórios:</h1>
+        <ul id="lista" class="flex overflow-x-scroll"></ul>
+        <button onclick="mostrarAcessorios()">Mostrar acessórios</button>
 
-</div>
-   
+        <p1>Carrinho de compras</p1>
+
+        <!-- Campo de entrada para novos acessórios -->
+        <div class="flex">
+            <input type="text" id="novoAcessorio" placeholder="Digite um acessório"
+                class="bg-white font-bold py-2 px-4 rounded w-60 mr-4">
+            <button class="w-60 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                onclick="adicionarAcessorio()">Adicionar Acessório</button>
+        </div>
+
+        <!-- Lista de acessórios adicionados -->
+        <ul id="listaCompras" class="mt-4"></ul>
+
+    </div>
+
     <footer class="bg-[#131921] h-16 text-white flex items-center justify-center flex flex-col">
         <p>Desenvolvido pelos alunos de S.I. da Unifacisa</p>
         <p>Guided by José Anderson</p>
@@ -49,4 +59,5 @@
 
     <script src="acessorios.js"></script>
 </body>
+
 </html>
