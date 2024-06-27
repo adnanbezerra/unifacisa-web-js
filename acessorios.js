@@ -54,7 +54,7 @@ function adicionarAcessorio() {
         }
     } else {
         {
-            alert('Por favor}, digite um acessório.');
+            alert('Por favor, digite um acessório.');
         }
     }
 }

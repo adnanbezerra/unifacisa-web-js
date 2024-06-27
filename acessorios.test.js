@@ -12,21 +12,19 @@ global.alert = jest.fn();
 describe('Testes para funções de acessórios', () => {
 
     test('Adicionar acessório válido à lista de compras', () => {
-
         document.getElementById('novoAcessorio').value = 'Spray limpeza';
-
 
         adicionarAcessorio();
 
-
         const listaCompras = document.getElementById('listaCompras');
         expect(listaCompras.children.length).toBe(1);
-        expect(listaCompras.children[0].textContent).toBe('Spray limpeza');
+        
+        const item = listaCompras.children[0];
+        const itemName = item.querySelector('span').textContent.trim();
+        expect(itemName).toBe('Spray limpeza');
     });
 
-
     test('Tentar adicionar acessório não disponível', () => {
-
         document.getElementById('novoAcessorio').value = 'Chaveiro';
 
         adicionarAcessorio();
